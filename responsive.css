@@ -1,0 +1,337 @@
+/* =======================================================
+   GA WEB STUDIO
+   RESPONSIVE
+======================================================= */
+
+
+/* =======================================================
+   DESKTOP GRANDE
+======================================================= */
+
+@media (min-width:1600px){
+
+    .hero__content{
+
+        max-width:850px;
+
+    }
+
+    .projects-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+
+/* =======================================================
+   NOTEBOOK
+======================================================= */
+
+@media (max-width:1200px){
+
+    .hero__content{
+
+        max-width:620px;
+
+    }
+
+    .projects-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* =======================================================
+   TABLET
+======================================================= */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:5rem 0;
+
+    }
+
+    .navigation{
+
+        display:none;
+
+    }
+
+    .header .primary-button{
+
+        display:none;
+
+    }
+
+    .menu-button{
+
+        display:block;
+
+    }
+
+    .hero{
+
+        min-height:auto;
+
+        padding-top:7rem;
+
+    }
+
+    .hero__wrapper{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .hero__content{
+
+        align-items:center;
+
+    }
+
+    .hero__buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero__stats{
+
+        justify-content:center;
+
+    }
+
+    .benefits__grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .projects-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .process-timeline{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .process-timeline::before{
+
+        display:none;
+
+    }
+
+    .footer__wrapper{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .footer-brand{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .footer-navigation{
+
+        align-items:center;
+
+    }
+
+    .footer-social{
+
+        justify-content:center;
+
+    }
+
+}
+
+
+/* =======================================================
+   SMARTPHONE
+======================================================= */
+
+@media (max-width:768px){
+
+    html{
+
+        font-size:15px;
+
+    }
+
+    .hero{
+
+        min-height:100vh;
+
+    }
+
+    .hero__content h1{
+
+        font-size:clamp(2.5rem,9vw,3.5rem);
+
+    }
+
+    .hero__content p{
+
+        font-size:1rem;
+
+    }
+
+    .hero__buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .hero__buttons a{
+
+        width:100%;
+
+    }
+
+    .hero__stats{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .stat{
+
+        flex:1;
+
+        min-width:130px;
+
+    }
+
+    .benefits__grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .process-timeline{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-content{
+
+        padding:2.5rem 1.5rem;
+
+    }
+
+    .contact-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .contact-buttons a{
+
+        width:100%;
+
+    }
+
+    .slider-arrow{
+
+        display:none;
+
+    }
+
+}
+
+
+/* =======================================================
+   SMARTPHONE PEQUENO
+======================================================= */
+
+@media (max-width:480px){
+
+    html{
+
+        font-size:14px;
+
+    }
+
+    .header{
+
+        height:72px;
+
+    }
+
+    .logo{
+
+        font-size:1.1rem;
+
+    }
+
+    .logo span{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    .mobile-menu{
+
+        width:100%;
+
+    }
+
+    .hero__badge{
+
+        font-size:.8rem;
+
+    }
+
+    .section-title h2{
+
+        font-size:2rem;
+
+    }
+
+    .section-title p{
+
+        font-size:.95rem;
+
+    }
+
+    .project-card__content{
+
+        padding:1.5rem;
+
+    }
+
+    .footer{
+
+        padding:3rem 1rem 2rem;
+
+    }
+
+}

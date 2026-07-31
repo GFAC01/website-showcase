@@ -1,0 +1,389 @@
+/* =======================================================
+   GA WEB STUDIO
+   PROJECTS
+======================================================= */
+
+/* =======================================================
+   SECTION
+======================================================= */
+
+.projects{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.projects__wrapper{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* =======================================================
+   FILTER
+======================================================= */
+
+.projects-filter{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+    margin-bottom:4rem;
+
+}
+
+.filter-button{
+
+    padding:.9rem 1.6rem;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:var(--color-text-light);
+
+    transition:var(--transition-normal);
+
+}
+
+.filter-button:hover,
+.filter-button.active{
+
+    background:var(--gradient-primary);
+
+    color:var(--color-white);
+
+    border-color:transparent;
+
+    box-shadow:var(--shadow-glow);
+
+}
+
+
+/* =======================================================
+   GRID
+======================================================= */
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+    gap:2rem;
+
+}
+
+
+/* =======================================================
+   CARD
+======================================================= */
+
+.project-card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    border-radius:var(--radius-lg);
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease;
+
+}
+
+.project-card:hover{
+
+    transform:
+
+        translateY(-10px);
+
+    border-color:
+
+        rgba(59,130,246,.35);
+
+    box-shadow:
+
+        0 25px 70px rgba(0,0,0,.35);
+
+}
+
+
+
+/* =======================================================
+   BROWSER
+======================================================= */
+
+.project-card__browser{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1rem 1.25rem;
+
+    background:rgba(255,255,255,.05);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.browser-dots{
+
+    display:flex;
+
+    gap:.45rem;
+
+}
+
+.browser-dots span{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+}
+
+.browser-dots span:nth-child(1){
+
+    background:#ff5f57;
+
+}
+
+.browser-dots span:nth-child(2){
+
+    background:#febc2e;
+
+}
+
+.browser-dots span:nth-child(3){
+
+    background:#28c840;
+
+}
+
+.browser-url{
+
+    font-size:.85rem;
+
+    color:var(--color-text-muted);
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+}
+
+
+/* =======================================================
+   IMAGE
+======================================================= */
+
+.project-card__image{
+
+    overflow:hidden;
+
+    aspect-ratio:16/10;
+
+}
+
+.project-card__image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .7s ease;
+
+}
+
+.project-card:hover .project-card__image img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* =======================================================
+   CONTENT
+======================================================= */
+
+.project-card__content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.25rem;
+
+    padding:2rem;
+
+    flex:1;
+
+}
+
+.project-category{
+
+    width:max-content;
+
+    padding:.45rem 1rem;
+
+    border-radius:999px;
+
+    background:rgba(37,99,235,.15);
+
+    color:var(--color-primary-light);
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+.project-card h3{
+
+    font-family:var(--font-title);
+
+    font-size:1.6rem;
+
+}
+
+.project-card p{
+
+    color:var(--color-text-light);
+
+    line-height:1.8;
+
+}
+
+
+/* =======================================================
+   TAGS
+======================================================= */
+
+.project-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.75rem;
+
+}
+
+.project-tags span{
+
+    padding:.45rem .9rem;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    font-size:.8rem;
+
+}
+
+
+/* =======================================================
+   BUTTONS
+======================================================= */
+
+.project-buttons{
+
+    display:flex;
+
+    gap:1rem;
+
+    margin-top:auto;
+
+}
+
+.project-buttons a{
+
+    flex:1;
+
+}
+
+/* =======================================================
+   CARD CURSOR GLOW
+======================================================= */
+
+
+.card-glow{
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(59,130,246,.45),
+
+        transparent 70%
+
+    );
+
+    filter:blur(40px);
+
+    opacity:0;
+
+    transition:opacity .3s ease;
+
+}
+
+
+
+.project-card > *,
+.benefit-card > *{
+
+    position:relative;
+
+    z-index:1;
+
+}

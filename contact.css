@@ -1,0 +1,232 @@
+/* =======================================================
+   GA WEB STUDIO
+   CONTACT
+======================================================= */
+
+/* =======================================================
+   SECTION
+======================================================= */
+
+.contact{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding-block:var(--space-5xl);
+
+}
+
+
+/* =======================================================
+   WRAPPER
+======================================================= */
+
+.contact__wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/* =======================================================
+   CARD
+======================================================= */
+
+.contact-content{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:900px;
+
+    padding:4rem;
+
+    border-radius:var(--radius-xl);
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow-card);
+
+}
+
+
+/* =======================================================
+   BACKGROUND EFFECT
+======================================================= */
+
+.contact-content::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-30%;
+
+    background:
+
+        radial-gradient(
+
+            rgba(37,99,235,.20),
+
+            transparent 70%
+
+        );
+
+    pointer-events:none;
+
+}
+
+
+/* =======================================================
+   SMALL TITLE
+======================================================= */
+
+.contact-content span{
+
+    display:inline-block;
+
+    margin-bottom:1rem;
+
+    color:var(--color-primary-light);
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-weight:600;
+
+}
+
+
+/* =======================================================
+   TITLE
+======================================================= */
+
+.contact-content h2{
+
+    font-family:var(--font-title);
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    line-height:1.1;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* =======================================================
+   TEXT
+======================================================= */
+
+.contact-content p{
+
+    max-width:650px;
+
+    margin-inline:auto;
+
+    color:var(--color-text-light);
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+
+}
+
+
+/* =======================================================
+   BUTTONS
+======================================================= */
+
+.contact-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:1.25rem;
+
+    flex-wrap:wrap;
+
+    margin-top:2.5rem;
+
+}
+
+.contact-buttons a{
+
+    min-width:220px;
+
+}
+
+
+/* =======================================================
+   HOVER
+======================================================= */
+
+.contact-content:hover{
+
+    border-color:rgba(59,130,246,.35);
+
+    box-shadow:
+
+        0 30px 70px rgba(0,0,0,.35);
+
+}
+
+
+/* =======================================================
+   ANIMATION
+======================================================= */
+
+.contact-content{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    animation:contactAppear .9s ease forwards;
+
+}
+
+
+/* =======================================================
+   KEYFRAMES
+======================================================= */
+
+@keyframes contactAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

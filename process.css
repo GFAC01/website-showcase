@@ -1,0 +1,268 @@
+/* =======================================================
+   GA WEB STUDIO
+   PROCESS
+======================================================= */
+
+/* =======================================================
+   SECTION
+======================================================= */
+
+.process{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.process__wrapper{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* =======================================================
+   TIMELINE
+======================================================= */
+
+.process-timeline{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:2rem;
+
+    margin-top:4rem;
+
+}
+
+
+/* Linha da timeline */
+
+.process-timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:36px;
+
+    left:0;
+
+    width:100%;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(59,130,246,.5),
+        transparent
+    );
+
+    z-index:0;
+
+}
+
+
+/* =======================================================
+   CARD
+======================================================= */
+
+.timeline-card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+    padding:2rem;
+
+    border-radius:var(--radius-lg);
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    z-index:1;
+
+}
+
+.timeline-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(59,130,246,.35);
+
+    box-shadow:var(--shadow-glow);
+
+}
+
+
+/* =======================================================
+   NÚMERO
+======================================================= */
+
+.timeline-number{
+
+    width:72px;
+
+    height:72px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--gradient-primary);
+
+    color:var(--color-white);
+
+    font-family:var(--font-title);
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    box-shadow:var(--shadow-glow);
+
+}
+
+
+/* =======================================================
+   TÍTULO
+======================================================= */
+
+.timeline-card h3{
+
+    font-family:var(--font-title);
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+}
+
+
+/* =======================================================
+   TEXTO
+======================================================= */
+
+.timeline-card p{
+
+    color:var(--color-text-light);
+
+    line-height:1.8;
+
+}
+
+
+/* =======================================================
+   HOVER DECORATION
+======================================================= */
+
+.timeline-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    background:linear-gradient(
+        135deg,
+        rgba(59,130,246,.12),
+        transparent 70%
+    );
+
+    opacity:0;
+
+    transition:opacity .35s ease;
+
+    pointer-events:none;
+
+}
+
+.timeline-card:hover::after{
+
+    opacity:1;
+
+}
+
+
+/* =======================================================
+   ENTRADA
+======================================================= */
+
+.timeline-card{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    animation:processAppear .8s ease forwards;
+
+}
+
+.timeline-card:nth-child(2){
+
+    animation-delay:.15s;
+
+}
+
+.timeline-card:nth-child(3){
+
+    animation-delay:.30s;
+
+}
+
+.timeline-card:nth-child(4){
+
+    animation-delay:.45s;
+
+}
+
+
+/* =======================================================
+   KEYFRAMES
+======================================================= */
+
+@keyframes processAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+

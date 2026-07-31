@@ -1,0 +1,354 @@
+/* =======================================================
+   GA WEB STUDIO
+   BENEFITS
+======================================================= */
+
+/* =======================================================
+   SECTION
+======================================================= */
+
+.benefits{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(255,255,255,.02),
+            transparent
+        );
+
+}
+
+.benefits__wrapper{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* =======================================================
+   GRID
+======================================================= */
+
+.benefits__grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+
+    gap:2rem;
+
+}
+
+
+/* =======================================================
+   CARD
+======================================================= */
+
+.benefit-card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+    padding:2rem;
+
+    border-radius:var(--radius-lg);
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    overflow:hidden;
+
+    transition:
+        transform .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+
+    transform-style:preserve-3d;
+
+    cursor:default;
+
+}
+
+
+/* =======================================================
+   BRILHO SUPERIOR
+======================================================= */
+
+.benefit-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:var(--mouse-x);
+
+    top:var(--mouse-y);
+
+    transform-style:preserve-3d;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+            130deg,
+            transparent 20%,
+            rgba(255,255,255,.10),
+            transparent 80%
+        );
+
+    transition:.8s;
+
+    pointer-events:none;
+
+}
+
+.benefit-card:hover::before{
+
+    transform:translateX(130%);
+
+}
+
+
+/* =======================================================
+   GLOW
+======================================================= */
+
+.benefit-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    right:-120px;
+
+    top:-120px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            rgba(37,99,235,.20),
+
+            transparent 70%
+
+        );
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.benefit-card:hover::after{
+
+    opacity:1;
+
+}
+
+
+/* =======================================================
+   HOVER
+======================================================= */
+
+.benefit-card:hover{
+
+    transform:
+
+        perspective(900px)
+
+        rotateX(6deg)
+
+        rotateY(-6deg)
+
+        translateY(-10px);
+
+    border-color:
+
+        rgba(59,130,246,.40);
+
+    box-shadow:
+
+        0 30px 70px rgba(0,0,0,.35);
+
+}
+
+
+/* =======================================================
+   ÍCONE
+======================================================= */
+
+.benefit-card__icon{
+
+    width:72px;
+
+    height:72px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:20px;
+
+    background:var(--gradient-primary);
+
+    color:white;
+
+    font-size:1.8rem;
+
+    box-shadow:var(--shadow-glow);
+
+    transition:.45s;
+
+}
+
+.benefit-card:hover .benefit-card__icon{
+
+    transform:
+
+        scale(1.12)
+
+        rotate(-8deg);
+
+}
+
+
+/* =======================================================
+   TÍTULO
+======================================================= */
+
+.benefit-card h3{
+
+    font-family:var(--font-title);
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+}
+
+
+/* =======================================================
+   TEXTO
+======================================================= */
+
+.benefit-card p{
+
+    color:var(--color-text-light);
+
+    line-height:1.9;
+
+}
+
+
+/* =======================================================
+   LINHA INFERIOR
+======================================================= */
+
+.benefit-card .card-line{
+
+    width:0;
+
+    height:3px;
+
+    border-radius:999px;
+
+    background:var(--gradient-primary);
+
+    transition:.5s;
+
+}
+
+.benefit-card:hover .card-line{
+
+    width:100%;
+
+}
+
+
+/* =======================================================
+   ANIMAÇÃO DE ENTRADA
+======================================================= */
+
+.benefit-card{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    animation:
+
+        benefitAppear
+
+        .9s
+
+        ease
+
+        forwards;
+
+}
+
+.benefit-card:nth-child(2){
+
+    animation-delay:.15s;
+
+}
+
+.benefit-card:nth-child(3){
+
+    animation-delay:.30s;
+
+}
+
+.benefit-card:nth-child(4){
+
+    animation-delay:.45s;
+
+}
+
+
+/* =======================================================
+   KEYFRAMES
+======================================================= */
+
+@keyframes benefitAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+

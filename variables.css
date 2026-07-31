@@ -1,0 +1,179 @@
+/* =======================================================
+   GA WEB STUDIO
+   VARIABLES
+======================================================= */
+
+:root{
+
+    /* ===================================================
+       CORES
+    =================================================== */
+
+    --color-primary: #2563EB;
+    --color-primary-light: #3B82F6;
+    --color-primary-dark: #1D4ED8;
+
+    --color-accent: #60A5FA;
+
+    --color-background: #020817;
+    --color-background-secondary: #0F172A;
+
+    --color-surface: #111827;
+    --color-card: #1E293B;
+
+    --color-border: rgba(255,255,255,.08);
+
+    --color-white: #FFFFFF;
+
+    --color-text: #F8FAFC;
+    --color-text-light: #CBD5E1;
+    --color-text-muted: #94A3B8;
+
+    --color-success: #22C55E;
+    --color-warning: #FACC15;
+    --color-danger: #EF4444;
+
+
+    /* ===================================================
+       GRADIENTES
+    =================================================== */
+
+    --gradient-primary:
+        linear-gradient(
+            135deg,
+            #2563EB,
+            #3B82F6,
+            #60A5FA
+        );
+
+    --gradient-background:
+        linear-gradient(
+            180deg,
+            #020817,
+            #071226,
+            #0F172A
+        );
+
+    --gradient-card:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.02)
+        );
+
+    --gradient-glow:
+        radial-gradient(
+            circle,
+            rgba(37,99,235,.35),
+            transparent 70%
+        );
+
+
+    /* ===================================================
+       TIPOGRAFIA
+    =================================================== */
+
+    --font-title:
+        "Poppins",
+        sans-serif;
+
+    --font-text:
+        "Inter",
+        sans-serif;
+
+
+    /* ===================================================
+       TAMANHOS
+    =================================================== */
+
+    --fs-xs: .75rem;
+    --fs-sm: .875rem;
+    --fs-md: 1rem;
+    --fs-lg: 1.125rem;
+    --fs-xl: 1.5rem;
+    --fs-2xl: 2rem;
+    --fs-3xl: 2.75rem;
+    --fs-4xl: 3.5rem;
+    --fs-5xl: 4.5rem;
+
+
+    /* ===================================================
+       ESPAÇAMENTOS
+    =================================================== */
+
+    --space-xs: .5rem;
+    --space-sm: .75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    --space-5xl: 8rem;
+
+
+    /* ===================================================
+       BORDER RADIUS
+    =================================================== */
+
+    --radius-xs: 6px;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-round: 999px;
+
+
+    /* ===================================================
+       SOMBRAS
+    =================================================== */
+
+    --shadow-xs:
+        0 2px 6px rgba(0,0,0,.15);
+
+    --shadow-sm:
+        0 8px 20px rgba(0,0,0,.20);
+
+    --shadow-md:
+        0 12px 30px rgba(0,0,0,.25);
+
+    --shadow-lg:
+        0 20px 60px rgba(0,0,0,.35);
+
+    --shadow-glow:
+        0 0 35px rgba(59,130,246,.35);
+
+    --shadow-card:
+        0 20px 40px rgba(2,8,23,.50);
+
+
+    /* ===================================================
+       TRANSIÇÕES
+    =================================================== */
+
+    --transition-fast: .2s ease;
+    --transition-normal: .35s ease;
+    --transition-slow: .6s ease;
+
+
+    /* ===================================================
+       CONTAINER
+    =================================================== */
+
+    --container-width: 1280px;
+
+    --header-height: 88px;
+
+
+    /* ===================================================
+       Z-INDEX
+    =================================================== */
+
+    --z-background: -1;
+    --z-normal: 1;
+    --z-menu: 100;
+    --z-header: 500;
+    --z-overlay: 900;
+    --z-loader: 9999;
+
+}

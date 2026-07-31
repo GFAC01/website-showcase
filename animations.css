@@ -1,0 +1,403 @@
+/* =======================================================
+   GA WEB STUDIO
+   ANIMATIONS
+======================================================= */
+
+/* =======================================================
+   FADE IN UP
+======================================================= */
+
+.fade-up{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =======================================================
+   FADE IN DOWN
+======================================================= */
+
+.fade-down{
+
+    animation:fadeDown .8s ease both;
+
+}
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =======================================================
+   FADE LEFT
+======================================================= */
+
+.fade-left{
+
+    animation:fadeLeft .8s ease both;
+
+}
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+/* =======================================================
+   FADE RIGHT
+======================================================= */
+
+.fade-right{
+
+    animation:fadeRight .8s ease both;
+
+}
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+/* =======================================================
+   ZOOM IN
+======================================================= */
+
+.zoom-in{
+
+    animation:zoomIn .8s ease both;
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* =======================================================
+   FLOATING
+======================================================= */
+
+.floating{
+
+    animation:floating 5s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =======================================================
+   PULSE
+======================================================= */
+
+.pulse{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* =======================================================
+   SHIMMER
+======================================================= */
+
+.shimmer{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.shimmer::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            120deg,
+
+            transparent,
+
+            rgba(255,255,255,.2),
+
+            transparent
+
+        );
+
+    transform:translateX(-120%);
+
+    animation:shimmer 3s infinite;
+
+}
+
+@keyframes shimmer{
+
+    to{
+
+        transform:translateX(120%);
+
+    }
+
+}
+
+
+/* =======================================================
+   GLOW
+======================================================= */
+
+.glow{
+
+    animation:glow 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+
+        filter:drop-shadow(0 0 0 rgba(37,99,235,.2));
+
+    }
+
+    to{
+
+        filter:drop-shadow(0 0 18px rgba(37,99,235,.6));
+
+    }
+
+}
+
+
+/* =======================================================
+   ROTATE
+======================================================= */
+
+.rotate{
+
+    animation:rotate 12s linear infinite;
+
+}
+
+@keyframes rotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* =======================================================
+   BOUNCE
+======================================================= */
+
+.bounce{
+
+    animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,20%,50%,80%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    40%{
+
+        transform:translateY(-12px);
+
+    }
+
+    60%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+/* =======================================================
+   REVEAL
+======================================================= */
+
+.fade-up,
+.fade-down,
+.fade-left,
+.fade-right,
+.zoom-in{
+
+    opacity:0;
+
+}
+
+.fade-up.show,
+.fade-down.show,
+.fade-left.show,
+.fade-right.show,
+.zoom-in.show{
+
+    opacity:1;
+
+}
+
+.project-card::before,
+.tech-card::before,
+.number-card::before{
+
+    pointer-events:none;
+
+}
+
+.project-card,
+.benefit-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
