@@ -28,7 +28,7 @@ const allLinks = [...desktopLinks, ...mobileLinks];
    MENU
 ========================================================== */
 
-function openMenu(){
+function openMenu() {
 
     menuButton.classList.add("active");
 
@@ -40,7 +40,7 @@ function openMenu(){
 
 }
 
-function closeMenu(){
+function closeMenu() {
 
     menuButton.classList.remove("active");
 
@@ -52,7 +52,7 @@ function closeMenu(){
 
 }
 
-function toggleMenu(){
+function toggleMenu() {
 
     const opened = mobileMenu.classList.contains("active");
 
@@ -65,15 +65,15 @@ function toggleMenu(){
    EVENTOS MENU
 ========================================================== */
 
-if(menuButton){
+if (menuButton) {
 
-    menuButton.addEventListener("click",toggleMenu);
+    menuButton.addEventListener("click", toggleMenu);
 
 }
 
-if(menuOverlay){
+if (menuOverlay) {
 
-    menuOverlay.addEventListener("click",closeMenu);
+    menuOverlay.addEventListener("click", closeMenu);
 
 }
 
@@ -82,9 +82,9 @@ if(menuOverlay){
    FECHAR AO CLICAR EM UM LINK
 ========================================================== */
 
-mobileLinks.forEach(link=>{
+mobileLinks.forEach(link => {
 
-    link.addEventListener("click",()=>{
+    link.addEventListener("click", () => {
 
         closeMenu();
 
@@ -97,9 +97,9 @@ mobileLinks.forEach(link=>{
    ESC
 ========================================================== */
 
-document.addEventListener("keydown",(event)=>{
+document.addEventListener("keydown", (event) => {
 
-    if(event.key==="Escape"){
+    if (event.key === "Escape") {
 
         closeMenu();
 
@@ -112,21 +112,21 @@ document.addEventListener("keydown",(event)=>{
    SCROLL SUAVE
 ========================================================== */
 
-allLinks.forEach(link=>{
+allLinks.forEach(link => {
 
-    link.addEventListener("click",(event)=>{
+    link.addEventListener("click", (event) => {
 
         const href = link.getAttribute("href");
 
-        if(!href) return;
+        if (!href) return;
 
-        if(!href.startsWith("#")) return;
+        if (!href.startsWith("#")) return;
 
         event.preventDefault();
 
         const target = document.querySelector(href);
 
-        if(!target) return;
+        if (!target) return;
 
         const offset = header.offsetHeight;
 
@@ -135,9 +135,9 @@ allLinks.forEach(link=>{
 
         window.scrollTo({
 
-            top:position,
+            top: position,
 
-            behavior:"smooth"
+            behavior: "smooth"
 
         });
 
@@ -150,13 +150,13 @@ allLinks.forEach(link=>{
    TRAVAR SCROLL IOS
 ========================================================== */
 
-function lockScroll(){
+function lockScroll() {
 
     document.body.classList.add("menu-open");
 
 }
 
-function unlockScroll(){
+function unlockScroll() {
 
     document.body.classList.remove("menu-open");
 
@@ -167,7 +167,7 @@ function unlockScroll(){
    MELHORAR MENU
 ========================================================== */
 
-function openMenu(){
+function openMenu() {
 
     menuButton.classList.add("active");
 
@@ -179,7 +179,7 @@ function openMenu(){
 
 }
 
-function closeMenu(){
+function closeMenu() {
 
     menuButton.classList.remove("active");
 
@@ -196,7 +196,7 @@ function closeMenu(){
    CLICK FORA
 ========================================================== */
 
-document.addEventListener("click",(event)=>{
+document.addEventListener("click", (event) => {
 
     const clickInsideMenu =
         mobileMenu.contains(event.target);
@@ -204,9 +204,9 @@ document.addEventListener("click",(event)=>{
     const clickButton =
         menuButton.contains(event.target);
 
-    if(clickInsideMenu) return;
+    if (clickInsideMenu) return;
 
-    if(clickButton) return;
+    if (clickButton) return;
 
     closeMenu();
 
@@ -217,9 +217,9 @@ document.addEventListener("click",(event)=>{
    RESIZE
 ========================================================== */
 
-window.addEventListener("resize",()=>{
+window.addEventListener("resize", () => {
 
-    if(window.innerWidth>992){
+    if (window.innerWidth > 992) {
 
         closeMenu();
 
@@ -232,7 +232,7 @@ window.addEventListener("resize",()=>{
    PRELOAD
 ========================================================== */
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
     document.body.classList.add("loaded");
 
@@ -250,17 +250,17 @@ window.addEventListener("scroll", handleHeaderScroll, {
     passive: true
 });
 
-function handleHeaderScroll(){
+function handleHeaderScroll() {
 
     const currentScroll = window.scrollY;
 
     /* HEADER GLASS */
 
-    if(currentScroll > 40){
+    if (currentScroll > 40) {
 
         header.classList.add("scrolled");
 
-    }else{
+    } else {
 
         header.classList.remove("scrolled");
 
@@ -268,19 +268,19 @@ function handleHeaderScroll(){
 
     /* HEADER INTELIGENTE */
 
-    if(currentScroll > SCROLL_LIMIT){
+    if (currentScroll > SCROLL_LIMIT) {
 
-        if(currentScroll > lastScroll){
+        if (currentScroll > lastScroll) {
 
             header.style.transform = "translateY(-100%)";
 
-        }else{
+        } else {
 
             header.style.transform = "translateY(0)";
 
         }
 
-    }else{
+    } else {
 
         header.style.transform = "translateY(0)";
 
@@ -301,9 +301,9 @@ window.addEventListener("scroll", updateProgressBar, {
     passive: true
 });
 
-function updateProgressBar(){
+function updateProgressBar() {
 
-    if(!progressBar) return;
+    if (!progressBar) return;
 
     const scrollTop = window.scrollY;
 
@@ -326,19 +326,19 @@ function updateProgressBar(){
 const backToTop =
     document.querySelector(".back-to-top");
 
-window.addEventListener("scroll", toggleBackToTop,{
-    passive:true
+window.addEventListener("scroll", toggleBackToTop, {
+    passive: true
 });
 
-function toggleBackToTop(){
+function toggleBackToTop() {
 
-    if(!backToTop) return;
+    if (!backToTop) return;
 
-    if(window.scrollY > 500){
+    if (window.scrollY > 500) {
 
         backToTop.classList.add("show");
 
-    }else{
+    } else {
 
         backToTop.classList.remove("show");
 
@@ -346,13 +346,13 @@ function toggleBackToTop(){
 
 }
 
-backToTop?.addEventListener("click",()=>{
+backToTop?.addEventListener("click", () => {
 
     window.scrollTo({
 
-        top:0,
+        top: 0,
 
-        behavior:"smooth"
+        behavior: "smooth"
 
     });
 
@@ -366,16 +366,16 @@ backToTop?.addEventListener("click",()=>{
 const sections =
     document.querySelectorAll("section[id]");
 
-window.addEventListener("scroll", updateActiveLink,{
-    passive:true
+window.addEventListener("scroll", updateActiveLink, {
+    passive: true
 });
 
-function updateActiveLink(){
+function updateActiveLink() {
 
     const scrollPosition =
         window.scrollY + header.offsetHeight + 80;
 
-    sections.forEach(section=>{
+    sections.forEach(section => {
 
         const top = section.offsetTop;
 
@@ -384,19 +384,19 @@ function updateActiveLink(){
 
         const id = section.id;
 
-        if(
+        if (
             scrollPosition >= top &&
             scrollPosition < bottom
-        ){
+        ) {
 
-            allLinks.forEach(link=>{
+            allLinks.forEach(link => {
 
                 link.classList.remove("active");
 
-                if(
+                if (
                     link.getAttribute("href") ===
                     `#${id}`
-                ){
+                ) {
 
                     link.classList.add("active");
 
@@ -416,7 +416,7 @@ function updateActiveLink(){
 ========================================================== */
 
 header.style.transition =
-`
+    `
 background .35s ease,
 backdrop-filter .35s ease,
 transform .35s ease,
@@ -461,15 +461,15 @@ const AUTO_TIME = 6000;
    SHOW SLIDE
 ========================================================== */
 
-function showSlide(index){
+function showSlide(index) {
 
-    slides.forEach(slide=>{
+    slides.forEach(slide => {
 
         slide.classList.remove("active");
 
     });
 
-    indicators.forEach(indicator=>{
+    indicators.forEach(indicator => {
 
         indicator.classList.remove("active");
 
@@ -488,11 +488,11 @@ function showSlide(index){
    NEXT
 ========================================================== */
 
-function nextSlide(){
+function nextSlide() {
 
     let index = currentSlide + 1;
 
-    if(index >= slides.length){
+    if (index >= slides.length) {
 
         index = 0;
 
@@ -507,11 +507,11 @@ function nextSlide(){
    PREVIOUS
 ========================================================== */
 
-function previousSlide(){
+function previousSlide() {
 
     let index = currentSlide - 1;
 
-    if(index < 0){
+    if (index < 0) {
 
         index = slides.length - 1;
 
@@ -526,7 +526,7 @@ function previousSlide(){
    AUTOPLAY
 ========================================================== */
 
-function startAutoplay(){
+function startAutoplay() {
 
     stopAutoplay();
 
@@ -534,9 +534,9 @@ function startAutoplay(){
 
 }
 
-function stopAutoplay(){
+function stopAutoplay() {
 
-    if(autoplay){
+    if (autoplay) {
 
         clearInterval(autoplay);
 
@@ -549,7 +549,7 @@ function stopAutoplay(){
    BUTTONS
 ========================================================== */
 
-nextButton?.addEventListener("click",()=>{
+nextButton?.addEventListener("click", () => {
 
     nextSlide();
 
@@ -557,7 +557,7 @@ nextButton?.addEventListener("click",()=>{
 
 });
 
-prevButton?.addEventListener("click",()=>{
+prevButton?.addEventListener("click", () => {
 
     previousSlide();
 
@@ -570,9 +570,9 @@ prevButton?.addEventListener("click",()=>{
    INDICATORS
 ========================================================== */
 
-indicators.forEach((indicator,index)=>{
+indicators.forEach((indicator, index) => {
 
-    indicator.addEventListener("click",()=>{
+    indicator.addEventListener("click", () => {
 
         showSlide(index);
 
@@ -587,18 +587,18 @@ indicators.forEach((indicator,index)=>{
    PAUSE HOVER
 ========================================================== */
 
-slider?.addEventListener("mouseenter",stopAutoplay);
+slider?.addEventListener("mouseenter", stopAutoplay);
 
-slider?.addEventListener("mouseleave",startAutoplay);
+slider?.addEventListener("mouseleave", startAutoplay);
 
 
 /* ==========================================================
    KEYBOARD
 ========================================================== */
 
-document.addEventListener("keydown",(event)=>{
+document.addEventListener("keydown", (event) => {
 
-    if(event.key==="ArrowRight"){
+    if (event.key === "ArrowRight") {
 
         nextSlide();
 
@@ -606,7 +606,7 @@ document.addEventListener("keydown",(event)=>{
 
     }
 
-    if(event.key==="ArrowLeft"){
+    if (event.key === "ArrowLeft") {
 
         previousSlide();
 
@@ -625,36 +625,36 @@ let touchStartX = 0;
 
 let touchEndX = 0;
 
-slider?.addEventListener("touchstart",(event)=>{
+slider?.addEventListener("touchstart", (event) => {
 
     touchStartX = event.changedTouches[0].screenX;
 
-},{passive:true});
+}, { passive: true });
 
-slider?.addEventListener("touchend",(event)=>{
+slider?.addEventListener("touchend", (event) => {
 
     touchEndX = event.changedTouches[0].screenX;
 
     handleSwipe();
 
-},{passive:true});
+}, { passive: true });
 
 
-function handleSwipe(){
+function handleSwipe() {
 
     const distance = touchEndX - touchStartX;
 
-    if(Math.abs(distance) < 60){
+    if (Math.abs(distance) < 60) {
 
         return;
 
     }
 
-    if(distance < 0){
+    if (distance < 0) {
 
         nextSlide();
 
-    }else{
+    } else {
 
         previousSlide();
 
@@ -669,7 +669,7 @@ function handleSwipe(){
    INIT
 ========================================================== */
 
-if(slides.length){
+if (slides.length) {
 
     showSlide(0);
 
@@ -689,31 +689,31 @@ const revealElements = document.querySelectorAll(
 
 const revealObserver = new IntersectionObserver(
 
-(entries)=>{
+    (entries) => {
 
-    entries.forEach(entry=>{
+        entries.forEach(entry => {
 
-        if(!entry.isIntersecting) return;
+            if (!entry.isIntersecting) return;
 
-        entry.target.classList.add("show");
+            entry.target.classList.add("show");
 
-        revealObserver.unobserve(entry.target);
+            revealObserver.unobserve(entry.target);
 
-    });
+        });
 
-},
+    },
 
-{
+    {
 
-    threshold:.15,
+        threshold: .15,
 
-    rootMargin:"0px 0px -80px 0px"
+        rootMargin: "0px 0px -80px 0px"
 
-}
+    }
 
 );
 
-revealElements.forEach(element=>{
+revealElements.forEach(element => {
 
     revealObserver.observe(element);
 
@@ -728,39 +728,39 @@ const counters = document.querySelectorAll("[data-counter]");
 
 const counterObserver = new IntersectionObserver(
 
-(entries)=>{
+    (entries) => {
 
-    entries.forEach(entry=>{
+        entries.forEach(entry => {
 
-        if(!entry.isIntersecting) return;
+            if (!entry.isIntersecting) return;
 
-        const counter = entry.target;
+            const counter = entry.target;
 
-        animateCounter(counter);
+            animateCounter(counter);
 
-        counterObserver.unobserve(counter);
+            counterObserver.unobserve(counter);
 
-    });
+        });
 
-},
+    },
 
-{
+    {
 
-    threshold:.5
+        threshold: .5
 
-}
+    }
 
 );
 
 
-counters.forEach(counter=>{
+counters.forEach(counter => {
 
     counterObserver.observe(counter);
 
 });
 
 
-function animateCounter(element){
+function animateCounter(element) {
 
     const target = Number(element.dataset.counter);
 
@@ -768,11 +768,11 @@ function animateCounter(element){
 
     const startTime = performance.now();
 
-    function update(now){
+    function update(now) {
 
         const progress = Math.min(
 
-            (now-startTime)/duration,
+            (now - startTime) / duration,
 
             1
 
@@ -786,11 +786,11 @@ function animateCounter(element){
 
         element.textContent = value;
 
-        if(progress < 1){
+        if (progress < 1) {
 
             requestAnimationFrame(update);
 
-        }else{
+        } else {
 
             element.textContent = target;
 
@@ -809,35 +809,35 @@ function animateCounter(element){
 
 const parallaxItems =
 
-document.querySelectorAll("[data-parallax]");
+    document.querySelectorAll("[data-parallax]");
 
 window.addEventListener(
 
-"scroll",
+    "scroll",
 
-()=>{
+    () => {
 
-    const scroll = window.pageYOffset;
+        const scroll = window.pageYOffset;
 
-    parallaxItems.forEach(item=>{
+        parallaxItems.forEach(item => {
 
-        const speed =
+            const speed =
 
-        Number(item.dataset.parallax) || .25;
+                Number(item.dataset.parallax) || .25;
 
-        item.style.transform =
+            item.style.transform =
 
-        `translateY(${scroll*speed}px)`;
+                `translateY(${scroll * speed}px)`;
 
-    });
+        });
 
-},
+    },
 
-{
+    {
 
-    passive:true
+        passive: true
 
-}
+    }
 
 );
 
@@ -848,17 +848,17 @@ window.addEventListener(
 
 const floatingElements =
 
-document.querySelectorAll(".floating");
+    document.querySelectorAll(".floating");
 
 floatingElements.forEach(
 
-(element,index)=>{
+    (element, index) => {
 
-    element.style.animationDelay =
+        element.style.animationDelay =
 
-    `${index*.3}s`;
+            `${index * .3}s`;
 
-});
+    });
 
 
 
@@ -868,19 +868,19 @@ floatingElements.forEach(
 
 const staggerGroups =
 
-document.querySelectorAll("[data-stagger]");
+    document.querySelectorAll("[data-stagger]");
 
-staggerGroups.forEach(group=>{
+staggerGroups.forEach(group => {
 
     [...group.children].forEach(
 
-        (child,index)=>{
+        (child, index) => {
 
             child.style.animationDelay =
 
-            `${index*.12}s`;
+                `${index * .12}s`;
 
-    });
+        });
 
 });
 
@@ -891,43 +891,43 @@ staggerGroups.forEach(group=>{
 
 const revealImages =
 
-document.querySelectorAll(
+    document.querySelectorAll(
 
-".project-card__image img"
+        ".project-card__image img"
 
-);
+    );
 
 const imageObserver =
 
-new IntersectionObserver(
+    new IntersectionObserver(
 
-(entries)=>{
+        (entries) => {
 
-    entries.forEach(entry=>{
+            entries.forEach(entry => {
 
-        if(!entry.isIntersecting) return;
+                if (!entry.isIntersecting) return;
 
-        entry.target.classList.add("visible");
+                entry.target.classList.add("visible");
 
-        imageObserver.unobserve(
+                imageObserver.unobserve(
 
-            entry.target
+                    entry.target
 
-        );
+                );
 
-    });
+            });
 
-},
+        },
 
-{
+        {
 
-    threshold:.2
+            threshold: .2
 
-}
+        }
 
-);
+    );
 
-revealImages.forEach(image=>{
+revealImages.forEach(image => {
 
     imageObserver.observe(image);
 
@@ -946,13 +946,13 @@ const cards3D = document.querySelectorAll(
 
 
 
-cards3D.forEach(card=>{
+cards3D.forEach(card => {
 
 
     const strength = 12;
 
 
-    card.addEventListener("mousemove",(event)=>{
+    card.addEventListener("mousemove", (event) => {
 
 
         const rect = card.getBoundingClientRect();
@@ -971,7 +971,7 @@ cards3D.forEach(card=>{
 
         const rotateX =
 
-            ((y-centerY) / centerY)
+            ((y - centerY) / centerY)
 
             * -strength;
 
@@ -979,7 +979,7 @@ cards3D.forEach(card=>{
 
         const rotateY =
 
-            ((x-centerX) / centerX)
+            ((x - centerX) / centerX)
 
             * strength;
 
@@ -1020,7 +1020,7 @@ cards3D.forEach(card=>{
 
 
 
-    card.addEventListener("mouseleave",()=>{
+    card.addEventListener("mouseleave", () => {
 
 
         card.style.transform = "";
@@ -1046,7 +1046,7 @@ const glowCards = document.querySelectorAll(
 
 
 
-glowCards.forEach(card=>{
+glowCards.forEach(card => {
 
 
     const glow = document.createElement("div");
@@ -1059,7 +1059,7 @@ glowCards.forEach(card=>{
 
 
 
-    card.addEventListener("mousemove",(event)=>{
+    card.addEventListener("mousemove", (event) => {
 
 
         const rect = card.getBoundingClientRect();
@@ -1083,7 +1083,7 @@ glowCards.forEach(card=>{
 
 
 
-    card.addEventListener("mouseleave",()=>{
+    card.addEventListener("mouseleave", () => {
 
 
         glow.style.opacity = "0";
@@ -1109,10 +1109,10 @@ const magneticButtons = document.querySelectorAll(
 
 
 
-magneticButtons.forEach(button=>{
+magneticButtons.forEach(button => {
 
 
-    button.addEventListener("mousemove",(event)=>{
+    button.addEventListener("mousemove", (event) => {
 
 
         const rect = button.getBoundingClientRect();
@@ -1120,25 +1120,25 @@ magneticButtons.forEach(button=>{
 
         const x =
 
-        event.clientX - rect.left - rect.width/2;
+            event.clientX - rect.left - rect.width / 2;
 
 
         const y =
 
-        event.clientY - rect.top - rect.height/2;
+            event.clientY - rect.top - rect.height / 2;
 
 
 
         button.style.transform =
 
-        `translate(${x*.15}px,${y*.15}px)`;
+            `translate(${x * .15}px,${y * .15}px)`;
 
 
     });
 
 
 
-    button.addEventListener("mouseleave",()=>{
+    button.addEventListener("mouseleave", () => {
 
 
         button.style.transform = "";
@@ -1165,61 +1165,61 @@ const cardImages = document.querySelectorAll(
 
 
 
-cardImages.forEach(image=>{
+cardImages.forEach(image => {
 
 
     const parent =
 
-    image.closest(".project-card");
+        image.closest(".project-card");
 
 
 
     parent?.addEventListener(
 
-    "mousemove",
+        "mousemove",
 
-    (event)=>{
-
-
-        const rect = parent.getBoundingClientRect();
+        (event) => {
 
 
-        const x = event.clientX - rect.left;
-
-        const y = event.clientY - rect.top;
+            const rect = parent.getBoundingClientRect();
 
 
+            const x = event.clientX - rect.left;
 
-        image.style.transform = `
+            const y = event.clientY - rect.top;
+
+
+
+            image.style.transform = `
 
             scale(1.12)
 
             translate(
 
-                ${(x-rect.width/2)*0.015}px,
+                ${(x - rect.width / 2) * 0.015}px,
 
-                ${(y-rect.height/2)*0.015}px
+                ${(y - rect.height / 2) * 0.015}px
 
             )
 
         `;
 
 
-    });
+        });
 
 
 
     parent?.addEventListener(
 
-    "mouseleave",
+        "mouseleave",
 
-    ()=>{
-
-
-        image.style.transform = "";
+        () => {
 
 
-    });
+            image.style.transform = "";
+
+
+        });
 
 
 });
@@ -1235,19 +1235,19 @@ cardImages.forEach(image=>{
     que o usuário parar uma ação.
 */
 
-function debounce(callback, delay = 200){
+function debounce(callback, delay = 200) {
 
     let timer;
 
-    return (...args)=>{
+    return (...args) => {
 
         clearTimeout(timer);
 
-        timer = setTimeout(()=>{
+        timer = setTimeout(() => {
 
             callback(...args);
 
-        },delay);
+        }, delay);
 
     };
 
@@ -1262,15 +1262,15 @@ function debounce(callback, delay = 200){
     Útil para scroll e resize.
 */
 
-function throttle(callback, limit = 100){
+function throttle(callback, limit = 100) {
 
     let waiting = false;
 
 
-    return (...args)=>{
+    return (...args) => {
 
 
-        if(waiting) return;
+        if (waiting) return;
 
 
         callback(...args);
@@ -1279,11 +1279,11 @@ function throttle(callback, limit = 100){
         waiting = true;
 
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-            waiting=false;
+            waiting = false;
 
-        },limit);
+        }, limit);
 
 
     };
@@ -1307,50 +1307,50 @@ const lazyImages = document.querySelectorAll(
 
 const imageLazyObserver = new IntersectionObserver(
 
-(entries,observer)=>{
+    (entries, observer) => {
 
 
-    entries.forEach(entry=>{
+        entries.forEach(entry => {
 
 
-        if(!entry.isIntersecting) return;
+            if (!entry.isIntersecting) return;
 
 
-        const image = entry.target;
+            const image = entry.target;
 
 
-        image.src = image.dataset.src;
+            image.src = image.dataset.src;
 
 
-        image.removeAttribute(
-            "data-src"
-        );
+            image.removeAttribute(
+                "data-src"
+            );
 
 
-        image.classList.add(
-            "loaded"
-        );
+            image.classList.add(
+                "loaded"
+            );
 
 
-        observer.unobserve(image);
+            observer.unobserve(image);
 
 
-    });
+        });
 
 
-},
+    },
 
-{
+    {
 
-    rootMargin:"100px"
+        rootMargin: "100px"
 
-}
+    }
 
 );
 
 
 
-lazyImages.forEach(image=>{
+lazyImages.forEach(image => {
 
 
     imageLazyObserver.observe(image);
@@ -1368,20 +1368,20 @@ lazyImages.forEach(image=>{
 const images = document.querySelectorAll("img");
 
 
-images.forEach(image=>{
+images.forEach(image => {
 
 
     image.addEventListener(
 
-    "error",
+        "error",
 
-    ()=>{
-
-
-        image.style.opacity="0";
+        () => {
 
 
-    });
+            image.style.opacity = "0";
+
+
+        });
 
 
 });
@@ -1395,13 +1395,13 @@ images.forEach(image=>{
 
 const isTouchDevice =
 
-window.matchMedia(
-"(pointer:coarse)"
-).matches;
+    window.matchMedia(
+        "(pointer:coarse)"
+    ).matches;
 
 
 
-if(isTouchDevice){
+if (isTouchDevice) {
 
 
     document.body.classList.add(
@@ -1420,15 +1420,15 @@ if(isTouchDevice){
 
 const prefersReducedMotion =
 
-window.matchMedia(
+    window.matchMedia(
 
-"(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)"
 
-).matches;
+    ).matches;
 
 
 
-if(prefersReducedMotion){
+if (prefersReducedMotion) {
 
 
     document.body.classList.add(
@@ -1445,13 +1445,13 @@ if(prefersReducedMotion){
 ========================================================== */
 
 
-if(isTouchDevice){
+if (isTouchDevice) {
 
 
-    cards3D.forEach(card=>{
+    cards3D.forEach(card => {
 
 
-        card.style.transform="";
+        card.style.transform = "";
 
 
     });
@@ -1468,15 +1468,15 @@ if(isTouchDevice){
 
 window.addEventListener(
 
-"resize",
+    "resize",
 
-throttle(()=>{
-
-
-    closeMenu();
+    throttle(() => {
 
 
-},300)
+        closeMenu();
+
+
+    }, 300)
 
 );
 
@@ -1489,27 +1489,27 @@ throttle(()=>{
 
 document.addEventListener(
 
-"visibilitychange",
+    "visibilitychange",
 
-()=>{
-
-
-    if(document.hidden){
+    () => {
 
 
-        stopAutoplay?.();
+        if (document.hidden) {
 
 
-    }else{
+            stopAutoplay?.();
 
 
-        startAutoplay?.();
+        } else {
 
 
-    }
+            startAutoplay?.();
 
 
-});
+        }
+
+
+    });
 
 
 
@@ -1518,7 +1518,7 @@ document.addEventListener(
 ========================================================== */
 
 
-function initializeGAWebStudio(){
+function initializeGAWebStudio() {
 
 
     console.log(
@@ -1543,30 +1543,93 @@ function initializeGAWebStudio(){
 const loader = document.querySelector(".loader");
 
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
 
-    if(!loader) return;
+    if (!loader) return;
 
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
 
         loader.classList.add("hidden");
 
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
 
             loader.remove();
 
 
-        },700);
+        }, 700);
 
 
-    },1500);
+    }, 1500);
 
 
 });
+
+/* =====================================================
+   FILTRO DOS PROJETOS
+===================================================== */
+
+const filterButtons =
+    document.querySelectorAll(".filter-button");
+
+const projectCards =
+    document.querySelectorAll(".project-card");
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        /* Remove o active de todos */
+
+        filterButtons.forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+        /* Ativa o botão clicado */
+
+        button.classList.add("active");
+
+
+        /* Categoria selecionada */
+
+        const filtro =
+            button.dataset.filter;
+
+
+        /* Filtra os projetos */
+
+        projectCards.forEach(card => {
+
+            const categoria =
+                card.dataset.category;
+
+
+            if (
+                filtro === "todos" ||
+                categoria === filtro
+            ) {
+
+                card.style.display = "";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
 
 initializeGAWebStudio();
