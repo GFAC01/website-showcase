@@ -110,6 +110,8 @@
 
     animation:heroZoom 12s linear infinite alternate;
 
+    transition: opacity 0.5s ease;
+
 }
 
 

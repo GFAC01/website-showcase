@@ -1632,4 +1632,59 @@ filterButtons.forEach(button => {
 });
 
 
+// ==========================================
+// HERO - IMAGEM ALEATÓRIA
+// ==========================================
+
+function imagemHeroAleatoria(id, imagens) {
+
+    const imagem = document.getElementById(id);
+
+    if (!imagem) return;
+
+    const imagemAleatoria =
+        imagens[Math.floor(Math.random() * imagens.length)];
+
+    imagem.src = imagemAleatoria;
+
+}
+
+imagemHeroAleatoria("hero1Image", [
+
+    "img/hero_1_img1.webp",
+    "img/hero_1_img2.webp",
+    "img/hero_1_img3.webp"
+
+]);
+
+imagemHeroAleatoria("hero2Image", [
+
+    "img/hero_2_img1.webp",
+    "img/hero_2_img2.webp",
+    "img/hero_2_img3.webp",
+    "img/hero_2_img4.webp",
+    "img/hero_2_img5.webp",
+    "img/hero_2_img6.webp",
+    "img/hero_2_img7.webp",
+    "img/hero_2_img8.webp",
+    "img/hero_2_img9.webp"
+
+]);
+
+imagemHeroAleatoria("hero3Image", [
+
+    "img/hero_3_img1.webp",
+    "img/hero_3_img2.webp",
+    "img/hero_3_img3.webp",
+    "img/hero_3_img4.webp",
+    "img/hero_3_img5.webp",
+    "img/hero_3_img6.webp",
+    "img/hero_3_img7.webp",
+    "img/hero_3_img8.webp",
+    "img/hero_3_img9.webp"
+
+]);
+
+
+
 initializeGAWebStudio();
