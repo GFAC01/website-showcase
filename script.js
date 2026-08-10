@@ -446,10 +446,6 @@ const slides = document.querySelectorAll(".hero-slide");
 
 const indicators = document.querySelectorAll(".indicator");
 
-const prevButton = document.querySelector(".slider-arrow--left");
-
-const nextButton = document.querySelector(".slider-arrow--right");
-
 let currentSlide = 0;
 
 let autoplay = null;
@@ -463,11 +459,32 @@ const AUTO_TIME = 6000;
 
 function showSlide(index) {
 
+    if (!slides.length) return;
+
+    /* Garante que o índice seja válido */
+
+    if (index >= slides.length) {
+
+        index = 0;
+
+    }
+
+    if (index < 0) {
+
+        index = slides.length - 1;
+
+    }
+
+    /* Remove active dos slides */
+
     slides.forEach(slide => {
 
         slide.classList.remove("active");
 
     });
+
+
+    /* Remove active dos indicadores */
 
     indicators.forEach(indicator => {
 
@@ -475,11 +492,24 @@ function showSlide(index) {
 
     });
 
+
+    /* Atualiza slide atual */
+
     currentSlide = index;
+
+
+    /* Ativa slide */
 
     slides[currentSlide].classList.add("active");
 
-    indicators[currentSlide]?.classList.add("active");
+
+    /* Ativa indicador correspondente */
+
+    if (indicators[currentSlide]) {
+
+        indicators[currentSlide].classList.add("active");
+
+    }
 
 }
 
@@ -543,27 +573,6 @@ function stopAutoplay() {
     }
 
 }
-
-
-/* ==========================================================
-   BUTTONS
-========================================================== */
-
-nextButton?.addEventListener("click", () => {
-
-    nextSlide();
-
-    startAutoplay();
-
-});
-
-prevButton?.addEventListener("click", () => {
-
-    previousSlide();
-
-    startAutoplay();
-
-});
 
 
 /* ==========================================================

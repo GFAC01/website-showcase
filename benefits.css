@@ -44,6 +44,8 @@
 
     gap:2rem;
 
+    align-items: start;
+
 }
 
 
@@ -51,37 +53,37 @@
    CARD
 ======================================================= */
 
-.benefit-card{
+.benefit-card {
+    position: relative;
 
-    position:relative;
+    display: flex;
+    flex-direction: column;
 
-    display:flex;
+    width: 100%;
+    max-height: 340px;
+    min-height: 0;
 
-    flex-direction:column;
+    gap: 1.25rem;
+    padding: 2rem;
 
-    gap:1.5rem;
+    border-radius: var(--radius-lg);
 
-    padding:2rem;
+    background: rgba(255,255,255,.04);
 
-    border-radius:var(--radius-lg);
+    border: 1px solid rgba(255,255,255,.08);
 
-    background:rgba(255,255,255,.04);
+    backdrop-filter: blur(18px);
 
-    border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(18px);
-
-    overflow:hidden;
+    overflow: hidden;
 
     transition:
         transform .45s ease,
         border-color .45s ease,
         box-shadow .45s ease;
 
-    transform-style:preserve-3d;
+    transform-style: preserve-3d;
 
-    cursor:default;
-
+    cursor: default;
 }
 
 
@@ -293,9 +295,7 @@
 
 .benefit-card{
 
-    opacity:0;
-
-    transform:translateY(60px);
+    opacity:1;
 
     animation:
 
@@ -332,23 +332,19 @@
    KEYFRAMES
 ======================================================= */
 
-@keyframes benefitAppear{
+@keyframes benefitAppear {
 
-    from{
-
-        opacity:0;
-
-        transform:translateY(60px);
-
+    from {
+        opacity: 0;
+        transform: translateY(60px);
     }
 
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }
+
+
 
