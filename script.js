@@ -1694,6 +1694,114 @@ imagemHeroAleatoria("hero3Image", [
 
 ]);
 
+/* =======================================================
+   FORMULÁRIO DE CONTATO
+======================================================= */
+
+const contactForm =
+    document.querySelector("#contactForm");
+
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+
+        /* ===================================================
+           DADOS DO FORMULÁRIO
+        =================================================== */
+
+        const name =
+            document.querySelector("#clientName").value.trim();
+
+        const businessName =
+            document.querySelector("#businessName").value.trim();
+
+        const businessType =
+            document.querySelector("#businessType").value;
+
+
+        const phone =
+            document.querySelector("#clientPhone").value.trim();
+
+
+        const description =
+            document.querySelector("#projectDescription").value.trim();
+
+
+        /* ===================================================
+           VALIDAÇÃO
+        =================================================== */
+
+        if (
+            !name ||
+            !businessName ||
+            !businessType ||
+            !phone ||
+            !description
+        ) {
+
+            alert(
+                "Por favor, preencha todos os campos antes de continuar."
+            );
+
+            return;
+
+        }
+
+
+        /* ===================================================
+           MENSAGEM
+        =================================================== */
+
+        const message =
+
+`Olá! Tudo bem?
+
+Meu nome é ${name}.
+
+Sou dono do(a) ${businessName}
+
+Estou entrando em contato porque tenho interesse em criar um site para o meu estabelecimento.
+
+📌 Tipo de estabelecimento:
+${businessType}
+
+📱 Meu WhatsApp:
+${phone}
+
+💻 O que espero do site:
+${description}
+
+Gostaria de conversar sobre as possibilidades e receber um orçamento.
+
+Obrigado!`;
+
+
+        /* ===================================================
+           WHATSAPP
+        =================================================== */
+
+        const whatsappNumber =
+            "5515998607300";
+
+
+        const whatsappURL =
+            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+
+        /* ===================================================
+           REDIRECIONAMENTO
+        =================================================== */
+
+        window.location.href = whatsappURL;
+
+    });
+
+}
+
 
 
 initializeGAWebStudio();

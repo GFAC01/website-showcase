@@ -1560,40 +1560,205 @@
 
                 <div class="contact-content">
 
-                    <span>
+                    <!-- Cabeçalho -->
 
-                        Vamos conversar?
+                    <div class="contact-header">
 
-                    </span>
+                        <span>
 
-                    <h2>
+                            Vamos conversar?
 
-                        Seu próximo projeto começa aqui.
+                        </span>
 
-                    </h2>
+                        <h2>
 
-                    <p>
+                            Conte um pouco sobre o seu projeto.
 
-                        Entre em contato e solicite um orçamento sem compromisso.
+                        </h2>
 
-                    </p>
+                        <p>
 
-                    <div class="contact-buttons">
+                            Preencha o formulário abaixo e entraremos em contato
+                            pelo WhatsApp para entender melhor o que você precisa.
 
-                        <a href="https://wa.me/5515998607300?text=Ol%C3%A1!%20Tudo%20bem%3F%20Tenho%20interesse%20em%20criar%20um%20site%20para%20o%20meu%20neg%C3%B3cio%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.%20Poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F"
-                            class="primary-button" target="_blank">
-
-                            WhatsApp
-
-                        </a>
-
-                        <a href="https://github.com/GFAC01" class="secondary-button" target="_blank">
-
-                            GitHub
-
-                        </a>
+                        </p>
 
                     </div>
+
+
+                    <!-- Formulário -->
+
+                    <form class="contact-form" id="contactForm">
+
+                        <!-- Nome -->
+
+                        <div class="form-group">
+
+                            <label for="clientName">
+
+                                Nome
+
+                            </label>
+
+                            <input type="text" id="clientName" name="clientName" placeholder="Como podemos chamar você?"
+                                required>
+
+                        </div>
+
+
+                        <!-- Nome do estabelecimento -->
+
+                        <div class="form-group">
+
+                            <label for="businessName">
+
+                                Nome do Esbelecimento
+
+                            </label>
+
+                            <input type="text" id="businessName" name="businessName" placeholder="Como se chama o seu estabelecimento?"
+                                required>
+
+                        </div>
+
+
+                        <!-- Tipo de estabelecimento -->
+
+                        <div class="form-group">
+
+                            <label for="businessType">
+
+                                Tipo de estabelecimento
+
+                            </label>
+
+                            <select id="businessType" name="businessType" required>
+
+                                <option value="" disabled selected>
+
+                                    Selecione uma opção
+
+                                </option>
+
+                                <option value="Loja">
+
+                                    Loja
+
+                                </option>
+
+                                <option value="Restaurante / Lanchonete">
+
+                                    Restaurante / Lanchonete
+
+                                </option>
+
+                                <option value="Barbearia / Salão">
+
+                                    Barbearia / Salão
+
+                                </option>
+
+                                <option value="Clínica / Consultório">
+
+                                    Clínica / Consultório
+
+                                </option>
+
+                                <option value="Academia">
+
+                                    Academia
+
+                                </option>
+
+                                <option value="Imobiliária">
+
+                                    Imobiliária
+
+                                </option>
+
+                                <option value="Oficina / Automotivo">
+
+                                    Oficina / Automotivo
+
+                                </option>
+
+                                <option value="Prestador de serviços">
+
+                                    Prestador de serviços
+
+                                </option>
+
+                                <option value="Outro">
+
+                                    Outro
+
+                                </option>
+
+                                <option value="Ainda não sei / Quero uma sugestão">
+
+                                    Ainda não sei / Quero uma sugestão
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- WhatsApp -->
+
+                        <div class="form-group">
+
+                            <label for="clientPhone">
+
+                                WhatsApp
+
+                            </label>
+
+                            <input type="tel" id="clientPhone" name="clientPhone" placeholder="(15) 99999-9999"
+                                required>
+
+                        </div>
+
+
+                        <!-- Objetivo do site -->
+
+                        <div class="form-group form-group--full">
+
+                            <label for="projectDescription">
+
+                                O que você espera de um site para o seu estabelecimento?
+
+                            </label>
+
+                            <textarea id="projectDescription" name="projectDescription" rows="6"
+                                placeholder="Conte um pouco sobre seu negócio, o que gostaria que o site tivesse, quais informações deseja apresentar aos clientes, se deseja mostrar produtos, serviços, localização, formas de contato etc."
+                                required></textarea>
+
+                        </div>
+
+
+                        <!-- Botão -->
+
+                        <div class="contact-form__footer">
+
+                            <button type="submit" class="primary-button">
+
+                                <i class="fa-brands fa-whatsapp"></i>
+
+                                Solicitar orçamento
+
+                            </button>
+
+                            <small>
+
+                                Você será direcionado para o WhatsApp.
+
+                            </small>
+
+                        </div>
+
+                    </form>
 
                 </div>
 

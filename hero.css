@@ -341,9 +341,11 @@
 
     align-items:center;
 
+    justify-content: center;
+
     gap:.75rem;
 
-    margin-top:2rem;
+    margin-top:3.5rem;
 
 }
 

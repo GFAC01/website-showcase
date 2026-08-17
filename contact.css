@@ -3,6 +3,7 @@
    CONTACT
 ======================================================= */
 
+
 /* =======================================================
    SECTION
 ======================================================= */
@@ -45,13 +46,11 @@
 
     width:100%;
 
-    max-width:900px;
+    max-width:1000px;
 
     padding:4rem;
 
     border-radius:var(--radius-xl);
-
-    text-align:center;
 
     overflow:hidden;
 
@@ -82,6 +81,8 @@
 
         radial-gradient(
 
+            circle,
+
             rgba(37,99,235,.20),
 
             transparent 70%
@@ -94,10 +95,27 @@
 
 
 /* =======================================================
+   HEADER
+======================================================= */
+
+.contact-header{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    margin-bottom:3rem;
+
+}
+
+
+/* =======================================================
    SMALL TITLE
 ======================================================= */
 
-.contact-content span{
+.contact-header span{
 
     display:inline-block;
 
@@ -118,11 +136,11 @@
    TITLE
 ======================================================= */
 
-.contact-content h2{
+.contact-header h2{
 
     font-family:var(--font-title);
 
-    font-size:clamp(2.5rem,5vw,4rem);
+    font-size:clamp(2.2rem,5vw,3.5rem);
 
     line-height:1.1;
 
@@ -135,50 +153,243 @@
    TEXT
 ======================================================= */
 
-.contact-content p{
+.contact-header p{
 
-    max-width:650px;
+    max-width:700px;
 
     margin-inline:auto;
 
     color:var(--color-text-light);
 
-    font-size:1.1rem;
+    font-size:1.05rem;
 
-    line-height:1.9;
+    line-height:1.8;
 
 }
 
 
 /* =======================================================
-   BUTTONS
+   FORM
 ======================================================= */
 
-.contact-buttons{
+.contact-form{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1.5rem;
+
+}
+
+
+/* =======================================================
+   FORM GROUP
+======================================================= */
+
+.form-group{
 
     display:flex;
 
-    justify-content:center;
+    flex-direction:column;
 
-    align-items:center;
-
-    gap:1.25rem;
-
-    flex-wrap:wrap;
-
-    margin-top:2.5rem;
-
-}
-
-.contact-buttons a{
-
-    min-width:220px;
+    gap:.6rem;
 
 }
 
 
 /* =======================================================
-   HOVER
+   LABEL
+======================================================= */
+
+.form-group label{
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    color:var(--color-text);
+
+}
+
+
+/* =======================================================
+   INPUT / SELECT / TEXTAREA
+======================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+
+    padding:1rem 1.1rem;
+
+    border-radius:var(--radius-md);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--color-text);
+
+    font-family:var(--font-text);
+
+    font-size:1rem;
+
+    transition:
+
+        border-color .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+/* =======================================================
+   SELECT
+======================================================= */
+
+.form-group select{
+
+    cursor:pointer;
+
+    appearance:auto;
+
+}
+
+
+/* =======================================================
+   SELECT OPTIONS
+======================================================= */
+
+.form-group select option{
+
+    background:var(--color-background-secondary);
+
+    color:var(--color-text);
+
+}
+
+
+/* =======================================================
+   TEXTAREA
+======================================================= */
+
+.form-group textarea{
+
+    min-height:160px;
+
+    resize:vertical;
+
+    line-height:1.7;
+
+}
+
+
+/* =======================================================
+   PLACEHOLDER
+======================================================= */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+
+    color:var(--color-text-muted);
+
+}
+
+
+/* =======================================================
+   FOCUS
+======================================================= */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    border-color:var(--color-primary-light);
+
+    background:rgba(255,255,255,.07);
+
+    box-shadow:
+
+        0 0 0 3px rgba(59,130,246,.10);
+
+}
+
+
+/* =======================================================
+   CAMPO FULL WIDTH
+======================================================= */
+
+.form-group--full{
+
+    grid-column:1 / -1;
+
+}
+
+
+/* =======================================================
+   FOOTER DO FORMULÁRIO
+======================================================= */
+
+.contact-form__footer{
+
+    grid-column:1 / -1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    margin-top:1rem;
+
+}
+
+
+/* =======================================================
+   BOTÃO
+======================================================= */
+
+.contact-form__footer .primary-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.7rem;
+
+    min-width:260px;
+
+}
+
+
+/* =======================================================
+   TEXTO AUXILIAR
+======================================================= */
+
+.contact-form__footer small{
+
+    color:var(--color-text-muted);
+
+    font-size:.85rem;
+
+}
+
+
+/* =======================================================
+   HOVER DO CARD
 ======================================================= */
 
 .contact-content:hover{
@@ -193,7 +404,7 @@
 
 
 /* =======================================================
-   ANIMATION
+   ANIMAÇÃO
 ======================================================= */
 
 .contact-content{
@@ -202,7 +413,15 @@
 
     transform:translateY(60px);
 
-    animation:contactAppear .9s ease forwards;
+    animation:
+
+        contactAppear
+
+        .9s
+
+        ease
+
+        forwards;
 
 }
 
@@ -226,6 +445,85 @@
         opacity:1;
 
         transform:translateY(0);
+
+    }
+
+}
+
+
+/* =======================================================
+   RESPONSIVIDADE
+======================================================= */
+
+@media(max-width:768px){
+
+    .contact{
+
+        padding-block:var(--space-4xl);
+
+    }
+
+
+    .contact-content{
+
+        padding:2rem 1.25rem;
+
+        border-radius:var(--radius-lg);
+
+    }
+
+
+    .contact-header{
+
+        margin-bottom:2rem;
+
+    }
+
+
+    .contact-header h2{
+
+        font-size:2.2rem;
+
+    }
+
+
+    .contact-header p{
+
+        font-size:.95rem;
+
+        line-height:1.7;
+
+    }
+
+
+    .contact-form{
+
+        grid-template-columns:1fr;
+
+        gap:1.25rem;
+
+    }
+
+
+    .form-group--full{
+
+        grid-column:auto;
+
+    }
+
+
+    .contact-form__footer{
+
+        grid-column:auto;
+
+    }
+
+
+    .contact-form__footer .primary-button{
+
+        width:100%;
+
+        min-width:0;
 
     }
 
