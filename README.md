@@ -1,4 +1,4 @@
-# Website Showcase
+# GAWEB Studios
 
 A collection of modern, responsive websites developed with HTML, CSS and JavaScript.
 
